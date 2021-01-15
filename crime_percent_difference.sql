@@ -1,0 +1,2 @@
+SELECT AVG(crime_count)from (SELECT COUNT(*) AS crime_count, "MONTH","HOUR","DAY_OF_WEEK" from crime where "OFFENSE_DESCRIPTION" LIKE 'ASSAULT%' group by "MONTH","HOUR","DAY_OF_WEEK") as subquery;
+SELECT *, ((crime_count-206.1369287340220627)/206.1369287340220627) AS percent_difference from (SELECT COUNT(*) AS crime_count, "MONTH","HOUR","DAY_OF_WEEK" from crime where "OFFENSE_DESCRIPTION" LIKE 'ASSAULT%'  group by "MONTH","HOUR","DAY_OF_WEEK") as subquery;
